@@ -1,8 +1,9 @@
 ---
+import Header from '../components/Header.astro';
 interface Props {
 	title: string;
 }
-
+ 
 const { title } = Astro.props;
 ---
 
@@ -17,34 +18,48 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Header/>
 		<slot />
+		<footer class="footer">©{new Date().getFullYear()} - Made with ♥ (and also Astro)</footer>
 	</body>
 </html>
 <style is:global>
+	@font-face {
+		font-family: 'ApfelGrotezkRegular';
+		src: url('../fonts/ApfelGrotezk-Regular.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'ApfelGrotezkSatt';
+		src: url('../fonts/ApfelGrotezk-Satt.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--blue: rgb(79, 129, 189);
+		--red: rgb(244, 89, 105);
+		--yellow: rgb(255, 221, 87);
+		--green: rgb(120, 200, 160);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background: rgb(250, 245, 246);
+		color: rgb(37, 37, 37);
+		font-family: 'ApfelGrotezkRegular';
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	h1 {
+		font-family: 'ApfelGrotezkSatt';		
 	}
+
+	.footer {
+		position: fixed;
+		bottom: 24px;
+		text-align: center;
+		width: 100%;
+	}
+
 </style>
