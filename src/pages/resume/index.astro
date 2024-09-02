@@ -4,9 +4,25 @@ import Layout from '../../layouts/Layout.astro';
 
 <Layout title="Maik Pleines - Software Developer">
 	<main>
-		coming soon
+		<div class="top">
+			<p>You can download my resume here:</p>
+			<div class="wrapper">
+				<a href="/resumes/resume_en.pdf" download class="btn">Download Resume (in english)</button>
+				<a href="/resumes/resume_de.pdf" download class="btn">Download Resume (in german)</button>
+			</div>
+		</div>
 	</main>
 </Layout>
 
 <style>
+	.top {
+		margin-top: 64px;
+	}
+
+	.wrapper {
+		display: flex;
+		gap: 16px;
+		flex-direction: column;
+		align-items: flex-start;
+	}
 </style>

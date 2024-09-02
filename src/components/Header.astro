@@ -6,10 +6,9 @@ import Link from './Link.astro';
   <h1>Maik Pleines</h1>
   <h2>Software Developer from Brunswick, Germany.</h2>
   <nav class="navigation">
-    <Link href="/" title="Home" linkColor="yellow"/>
-    <Link href="/blog" title="Blog" linkColor="blue"/>
-    <Link href="/resume" title="Resume" linkColor="red"/>
-    <Link href="https://github.com/mpleines" title="Github" linkColor="green"/>
+    <Link pathname="/" title="Home" linkColor="yellow"/>
+    <Link pathname="/resume" title="Resume" linkColor="red"/>
+    <Link pathname="https://github.com/mpleines" title="Github" linkColor="green"/>
   </nav>
 </section>
 
@@ -17,14 +16,6 @@ import Link from './Link.astro';
 	h2 {
 		color: rgb(107, 107, 107);
 	}
-
-  .header {
-    margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		font-size: 20px;
-  }
 
   .navigation {
 		display: flex;

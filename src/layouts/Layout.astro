@@ -18,8 +18,10 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header/>
-		<slot />
+		<div class="max-width">
+			<Header/>
+			<slot />
+		</div>
 		<footer class="footer">©{new Date().getFullYear()} - Made with ♥ (and also Astro)</footer>
 	</body>
 </html>
@@ -51,6 +53,14 @@ const { title } = Astro.props;
 		font-family: 'ApfelGrotezkRegular';
 	}
 
+	.max-width {
+    margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		font-size: 20px;
+	}
+
 	h1 {
 		font-family: 'ApfelGrotezkSatt';		
 	}
@@ -60,6 +70,7 @@ const { title } = Astro.props;
 		bottom: 24px;
 		text-align: center;
 		width: 100%;
+		background: rgb(250, 245, 246); 
 	}
 
 </style>
