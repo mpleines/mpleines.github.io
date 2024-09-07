@@ -1,0 +1,35 @@
+---
+import matter from 'gray-matter';
+import { readdir, readFile } from 'fs/promises';
+
+interface Props {
+	slug: string
+}
+
+const { slug } = Astro.props;
+const fileContent = await readFile(`./src/pages/posts/${slug}`, 'utf-8');
+const { data, content } = matter(fileContent);
+---
+
+<div class="wrapper">
+  <h2>{data.title}</h2>
+  <p>{data.description}</p>
+  <a href={`/posts/${slug.replace('.md', '')}`}>Read more</a>
+</div>
+
+<style>
+  .wrapper {
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    margin: 8px 0px;
+  }
+
+  p {
+    margin: 0px;
+    font-size:0.9em;
+    color: rgb(107, 107, 107);
+  }
+
+</style>

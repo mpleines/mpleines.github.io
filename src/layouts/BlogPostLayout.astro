@@ -1,0 +1,22 @@
+---
+import Layout from "./Layout.astro";
+
+const {frontmatter} = Astro.props;
+---
+<Layout title={frontmatter.title}>
+  <div class="top">
+    <h1 class="title">{frontmatter.title}</h1>
+    <p>{frontmatter.description}</p>
+    <slot />
+  </div>
+</Layout>
+
+<style>
+  .top {
+    margin-top: 64px;
+  }
+
+  .title {
+    color: var(--blue);
+  }
+</style>

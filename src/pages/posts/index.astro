@@ -1,0 +1,25 @@
+---
+import Link from '../../components/Link.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import Layout from '../../layouts/Layout.astro';
+import { readdir } from 'fs/promises';
+const dir = await readdir('./src/pages/posts');
+const markdownFiles = dir.filter((file) => file.endsWith('.md'));
+console.log(markdownFiles)
+
+
+---
+<Layout title="Blog">
+  <main>
+		<div class="top">
+			<h2>Posts</h2>
+      {markdownFiles.map(filename => <PostPreview slug={filename}/>)}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.top {
+		margin-top: 64px;
+	}
+</style>
