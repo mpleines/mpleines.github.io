@@ -1,22 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Link from '../components/Link.astro';
-import Header from '../components/Header.astro';
 ---
 
 <Layout title="Maik Pleines - Software Developer">
 	<main>
-		<section class="section">
-			<p>
-				Hi! I'm Maik, and I like to make Software!
-			</p>
-			<p>I'm a experienced software developer who likes to build stuff. I love creating things that live on <span class="funky">t</span><span class="funky">h</span><span class="funky">e</span> <span class="funky">w</span><span class="funky">e</span><span class="funky">b</span>.
-				I enjoy making music, playing guitar, and spending time with family & friends in my free time.
-	
-			<p>I am currently building a note taking app called <a href="https://github.com/mpleines/the-markdown-project">The Markdown Project.</a></p>
-
-			<p>If you want to know more you can download my resume, checkout my Github profile, or have a look at my blog. Feel free to send me an e-mail to <a href="mailto:service.mpleines@gmail.com">service.mpleines@gmail.com</a></p>
+		<section id="about" class="section">
+			<h1>Hi! I'm Maik, and I like to make Software!</h1>
+			<p>I'm a experienced software developer who likes to build stuff. I love creating things that live on <span class="funky">t</span><span class="funky">h</span><span class="funky">e</span> <span class="funky">w</span><span class="funky">e</span><span class="funky">b</span>.</p>
 		<section>
+		<section id="projects" class="section">
+			<h1>What I am working on</h1>
+			<p>Right now, I'm developing <a href="https://resu-genie.vercel.app">resugenie.</a> - an AI-powered resume builder designed to help job seekers craft standout resumes effortlessly.</p>
+			<p>I have build several other projects which you can find on my <a href="https://github.com/mpleines/">Github profile</a>.</p>
+		</section>
+		<section id="contact" class="section">
+			<h1>Contact</h1>
+			<p>If you want to know more you can <a href="/resume">download my resume</a> or just shoot me an email at: <a href="mailto:service.mpleines@gmail.com">service.mpleines@gmail.com</a> - I'd love to hear from you.</p>
+		</section>
 	</main>
 </Layout>
 
@@ -29,5 +29,9 @@ import Header from '../components/Header.astro';
 		font-weight: bold;
 		display: inline-block;
 		transform: rotate(4deg) translateX(0) translateY(0);
+	}
+
+	h1 {
+		font-size: 1.5rem;
 	}
 </style>

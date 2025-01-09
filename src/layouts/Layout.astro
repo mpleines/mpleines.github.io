@@ -58,6 +58,7 @@ const { title } = Astro.props;
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
+		min-height: calc(100vh - 128px);
 		font-size: 20px;
 		padding-bottom: 64px;
 	}
@@ -67,8 +68,7 @@ const { title } = Astro.props;
 	}
 
 	.footer {
-		position: fixed;
-		bottom: 0px;
+		border-top: 1px solid rgb(37, 37, 37);
 		padding: 12px 0px;
 		text-align: center;
 		width: 100%;
